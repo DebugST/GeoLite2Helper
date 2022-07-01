@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<title>GeoLite2 helper</title>
+<link rel="stylesheet" type="text/css" href="./css/stdoc.css"/>
+<script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="./js/stdoc.js"></script>
+</head>
+<body>
+<div id="div_body">
+<div id="div_left">
+<div id="div_left_list">
+<ul class='ul_group_root'>
+<li>
+    <a class='a_node_root anchor_btn' name='a_a' href='#a_a'>GeoLite2 Database</a>
+    <ul>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_b' href='#a_b'>介绍</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_c' href='#a_c'>数据下载</a></li>
+    </ul>
+</li>
+<li>
+    <a class='a_node_root anchor_btn' name='a_d' href='#a_d'>工具使用</a>
+    <ul>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_e' href='#a_e'>介绍</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_f' href='#a_f'>create</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_g' href='#a_g'>search</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_h' href='#a_h'>server</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_i' href='#a_i'>http</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_j' href='#a_j'>udp</a></li>
+    </ul>
+</li>
+<li>
+    <a class='a_node_root anchor_btn' name='a_k' href='#a_k'>The End</a>
+    <ul>
+        
+    </ul>
+</li>
+</ul><span class='span_time'>2022-05-13</span>
+</div>
+</div>
+<div id="div_right">
+<h1 class='h_title anchor_point' name='a_a'>GeoLite2 Database</h1>
+<div><h2 class='h_option anchor_point' name='a_b'>介绍</h2></div>
+<hr/>
+<p>注册: <a target='_bank' href='https://www.maxmind.com/en/geolite2/signup'>https://www.maxmind.com/en/geolite2/signup</a></p>
+<p>链接: <a target='_bank' href='https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en'>https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en</a></p>
+<p><span class='span_mark'>GeoLite2</span>数据库是免费的IP地理定位数据库 可与<span class='span_mark'>MaxMind</span>的<a target='_bank' href='https://www.maxmind.com/en/geoip2-databases'>GeoIP2</a>数据库相媲美 但不如<span class='span_mark'>MaxMind</span>的<a target='_bank' href='https://www.maxmind.com/en/geoip2-databases'>GeoIP2</a>数据库准确</p>
+<p><span class='span_mark'>GeoLite2</span>的<span class='span_mark'>国家</span><span class='span_mark'>城市</span>和<span class='span_mark'>ASN</span>数据每<span class='span_mark'>周二</span>将在网站更新下载包</p>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_c'>数据下载</h2></div>
+<hr/>
+<p>链接: <a target='_bank' href='https://www.maxmind.com/en/accounts/716735/geoip/downloads'>https://www.maxmind.com/en/accounts/716735/geoip/downloads</a></p>
+<img width=727 src='images/download.png'/>
+<p><span class='span_mark'>GeoLite2</span>提供了多种数据格式 该程序仅解析<span class='span_mark'>CSV</span>格式</p>
+<p>通常下载<span class='span_mark'>City</span>和<span class='span_mark'>ASN</span>数据</p>
+<p><span class='span_mark'>City</span>为精确到城市的IP定位数据</p>
+<p><span class='span_mark'>ASN</span>为自治系统信息(IP归属机构)</p>
+<img width=567 src='images/files.png'/>
+<p>以<span class='span_mark'>City</span>的<span class='span_mark'>CSV</span>数据为例 解压下载的压缩包可看到许多文件 <span class='span_mark'>语言文件</span> <span class='span_mark'>IPV4段</span> <span class='span_mark'>IPV6段</span> <span class='span_mark'>LICENSE</span> 等</p>
+<p>此工具可解析<span class='span_mark'>GeoLite2 City: CSV Format</span> 和 <span class='span_mark'>GeoLite2 ASN: CSV Format</span></p>
+<h1 class='h_title anchor_point' name='a_d'>工具使用</h1>
+<div><h2 class='h_option anchor_point' name='a_e'>介绍</h2></div>
+<hr/>
+<p>工具为控制台程序通过控制台运行即可 一共两个版本 <span class='span_mark'>DotNet core 5.0</span> <span class='span_mark'>DotNet Framework 4.0</span></p>
+<p><span class='span_mark'>DotNet core 5.0</span>为跨平台版本 但需要<span class='span_mark'>DotNet5</span>环境 安装教程见微软官网: <a target='_bank' href='https://dotnet.microsoft.com/'>https://dotnet.microsoft.com/</a></p>
+<p><span class='span_mark'>DotNet Framework 4.0</span>为<span class='span_mark'>Windows</span>版本需要<span class='span_mark'>.Net Framework 4.0</span>环境 通常<span class='span_mark'>Win10</span>系统已经自带</p>
+<p>在 <span class='span_mark'>DotNet core</span> 环境下运行</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>dotnet GeoLite2Helper.dll</pre>
+</div>
+<p>在 <span class='span_mark'>Windows</span> 环境下运行</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper.exe</pre>
+</div>
+<p>输出</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper (search|create|server) ...
+<span class='span_code_line'></span>------------------------------------------------------------------------
+<span class='span_code_line'></span>search : search info from ip
+<span class='span_code_line'></span>         search [IP] [DBFile]+
+<span class='span_code_line'></span>    e.g: search 8.8.8.8 db.loc
+<span class='span_code_line'></span>    e.g: search 8.8.8.8 db.asn
+<span class='span_code_line'></span>    e.g: search 8.8.8.8 db.loc db.asn
+<span class='span_code_line'></span>    e.g: search 8.8.8.8 db.asn db.loc
+<span class='span_code_line'></span>create : create database file
+<span class='span_code_line'></span>         create (loc|asn) ...
+<span class='span_code_line'></span>    e.g: create asn GeoLite2-ASN-Blocks-IPv4.csv db.asn
+<span class='span_code_line'></span>    e.g: create loc City-Locations-zh-CN.csv City-Blocks-IPv4.csv db.loc
+<span class='span_code_line'></span>server : run <span class='code_key'>as</span> server
+<span class='span_code_line'></span>         server (http|udp) [port] [local] [DBFile]+
+<span class='span_code_line'></span>         http : run <span class='code_key'>as</span> http server
+<span class='span_code_line'></span>                http:<span class='code_note'>//localip:port?ip=8.8.8.8</span>
+<span class='span_code_line'></span>         udp  : run <span class='code_key'>as</span> udp server
+<span class='span_code_line'></span>                recv:[ip]    back:[result_json]
+<span class='span_code_line'></span>         local: (1/0) <span class='code_key'>if</span> local just bind 127.0.0.1, otherwrise 0.0.0.0
+<span class='span_code_line'></span>    e.g: server http 8080 1 db.loc
+<span class='span_code_line'></span>    e.g: server udp 12345 0 db.loc
+<span class='span_code_line'></span>    e.g: server udp 12345 0 db.asn
+<span class='span_code_line'></span>    e.g: server http 8080 1 db.loc db.asn
+<span class='span_code_line'></span>    e.g: server http 8080 1 db.asn db.loc
+<span class='span_code_line'></span>------------------------------------------------------------------------
+<span class='span_code_line'></span>Powered by DebugST -&gt; http:<span class='code_note'>//github.com/DebugST</span></pre>
+</div>
+<p>工具提供了3种运行模式 分别为<span class='span_mark'>search</span> <span class='span_mark'>create</span> <span class='span_mark'>server</span></p>
+<p class='p_hightlight'><span class='span_mark'>*.loc</span>和<span class='span_mark'>*.asn</span>为工具自定义数据库文件 <span class='span_mark'>*.loc</span>为IP定位数据 <span class='span_mark'>*.asn</span>为IP自治系统数据 由工具通过<span class='span_mark'>CSV</span>文件自行创建</p>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_f'>create</h2></div>
+<hr/>
+<p><span class='span_mark'>create</span> 提供根据<span class='span_mark'>CSV</span>文件生成工具自定义的数据库文件 <span class='span_mark'>CSV</span>文件为刚才介绍中提到文件</p>
+<p>命令格式</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper create (loc|asn) ...</pre>
+</div>
+<p><span class='span_mark'>loc</span>表示创建IP定位数据库 则需要<span class='span_mark'>City</span>下载包里面的<span class='span_mark'>语言文件</span>和<span class='span_mark'>IPV4</span>文件</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper create loc [loc_file] [ipv4_file] [out_file]
+<span class='span_code_line'></span>eg:
+<span class='span_code_line'></span>GeoLite2Helper create loc GeoLite2-City-Locations-zh-CN.csv GeoLite2-City-Blocks-IPv4.csv db.loc</pre>
+</div>
+<p>运行后将会生成<span class='span_mark'>db.loc</span>文件</p>
+<p><span class='span_mark'>asn</span>表示创建自治系统数据库 则需要<span class='span_mark'>ASN</span>下载包里面的<span class='span_mark'>IPV4</span>文件</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper create asn [ipv4_file] [out_file]
+<span class='span_code_line'></span>eg:
+<span class='span_code_line'></span>GeoLite2Helper create asn GeoLite2-ASN-Blocks-IPv4.csv db.asn</pre>
+</div>
+<p>运行后将会生成<span class='span_mark'>db.asn</span>文件</p>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_g'>search</h2></div>
+<hr/>
+<p><span class='span_mark'>search</span> 为单次检索命令</p>
+<p>命令格式</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper search [IP] [DBFile]+
+<span class='span_code_line'></span>eg:
+<span class='span_code_line'></span>GeoLite2Helper search 223.5.5.5 db.loc
+<span class='span_code_line'></span>GeoLite2Helper search 223.5.5.5 db.asn
+<span class='span_code_line'></span>GeoLite2Helper search 223.5.5.5 db.loc db.asn
+<span class='span_code_line'></span>GeoLite2Helper search 223.5.5.5 db.asn db.loc</pre>
+</div>
+<p class='p_hightlight'>可以选择使用其中一个或者两个数据库文件同时使用</p>
+<p>示例:</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>$ GeoLite2Helper search 223.5.5.5 db.asn db.loc
+<span class='span_code_line'></span>----------------------------------------------------------
+<span class='span_code_line'></span>{
+<span class='span_code_line'></span>    <span class='code_string'>"asn"</span>: {
+<span class='span_code_line'></span>        <span class='code_string'>"number"</span>: 37963,
+<span class='span_code_line'></span>        <span class='code_string'>"name"</span>: <span class='code_string'>"Hangzhou Alibaba Advertising Co.,Ltd."</span>
+<span class='span_code_line'></span>    },
+<span class='span_code_line'></span>    <span class='code_string'>"location"</span>: {
+<span class='span_code_line'></span>        <span class='code_string'>"geoname"</span>: {
+<span class='span_code_line'></span>            <span class='code_string'>"locale_code"</span>: <span class='code_string'>"zh-CN"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"continent_code"</span>: <span class='code_string'>"AS"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"continent_name"</span>: <span class='code_string'>"亚洲"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"country_iso_code"</span>: <span class='code_string'>"CN"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"country_name"</span>: <span class='code_string'>"中国"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_1_iso_code"</span>: <span class='code_string'>"ZJ"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_1_name"</span>: <span class='code_string'>"浙江省"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_2_iso_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_2_name"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"city_name"</span>: <span class='code_string'>"杭州"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"metro_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"time_zone"</span>: <span class='code_string'>"Asia/Shanghai"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"is_in_european_union"</span>: <span class='code_string'>"0"</span>
+<span class='span_code_line'></span>        },
+<span class='span_code_line'></span>        <span class='code_string'>"registered_country_geoname"</span>: {
+<span class='span_code_line'></span>            <span class='code_string'>"locale_code"</span>: <span class='code_string'>"zh-CN"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"continent_code"</span>: <span class='code_string'>"AS"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"continent_name"</span>: <span class='code_string'>"亚洲"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"country_iso_code"</span>: <span class='code_string'>"CN"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"country_name"</span>: <span class='code_string'>"中国"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_1_iso_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_1_name"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_2_iso_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_2_name"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"city_name"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"metro_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"time_zone"</span>: <span class='code_string'>"Asia/Shanghai"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"is_in_european_union"</span>: <span class='code_string'>"0"</span>
+<span class='span_code_line'></span>        },
+<span class='span_code_line'></span>        <span class='code_string'>"represented_country_geoname"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"is_anonymous_proxy"</span>: <span class='code_string'>"0"</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"is_satellite_provider"</span>: <span class='code_string'>"0"</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"postal_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"latitude"</span>: <span class='code_string'>"30.2994"</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"longitude"</span>: <span class='code_string'>"120.1612"</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"accuracy_radius"</span>: <span class='code_string'>"1000"</span>
+<span class='span_code_line'></span>    }
+<span class='span_code_line'></span>}
+<span class='span_code_line'></span><span class='code_note'>//注 真实结果并未对JSON格式化</span></pre>
+</div>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_h'>server</h2></div>
+<hr/>
+<p><span class='span_mark'>server</span> 为以服务模式允许 支持两种服务模式 <span class='span_mark'>http</span> <span class='span_mark'>udp</span></p>
+<p><span class='span_mark'>http</span> 以<span class='span_mark'>GET</span>方式发送数据 参数为<span class='span_mark'>ip</span></p>
+<p><span class='span_mark'>udp</span>  以<span class='span_mark'>UDP</span>方式监听端口 接受<span class='span_mark'>IP</span>纯文本 返回此<span class='span_mark'>IP</span>查询结果的<span class='span_mark'>JSON</span>数据</p>
+<p>命令格式</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper server (http|udp) [port] [local] [DBFile]+
+<span class='span_code_line'></span>port           -&gt; 监听端口
+<span class='span_code_line'></span>local          -&gt; 是否仅监听回环地址 (1 or 0)
+<span class='span_code_line'></span>DBFile         -&gt; 数据库文件 如 -&gt; db.loc
+<span class='span_code_line'></span>eg:
+<span class='span_code_line'></span>GeoLite2Helper server http 8080 0 db.loc        <span class='code_note'>//以http方式启动服务 对局域网生效</span>
+<span class='span_code_line'></span>GeoLite2Helper server udp 12345 1 db.asn        <span class='code_note'>//以udp方式启动服务 仅本机生效</span>
+<span class='span_code_line'></span>GeoLite2Helper server http 8080 0 db.loc db.asn <span class='code_note'>//以http方式启动服务 对局域网生效</span>
+<span class='span_code_line'></span>GeoLite2Helper server http 8080 0 db.asn db.loc <span class='code_note'>//以http方式启动服务 对局域网生效</span></pre>
+</div>
+<p class='p_hightlight'>在<span class='span_mark'>http</span>模式下 启动局域网生效需要<span class='span_mark'>Administrator</span>.</p>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_i'>http</h2></div>
+<hr/>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>$ GeoLite2Helper server http 8080 1 db.asn db.loc
+<span class='span_code_line'></span>-----------------------------------------------------
+<span class='span_code_line'></span>$ curl http:<span class='code_note'>//localhost:8080/?ip=8.8.8.8</span>
+<span class='span_code_line'></span>-----------------------------------------------------
+<span class='span_code_line'></span>{
+<span class='span_code_line'></span>    ...
+<span class='span_code_line'></span>    <span class='code_note'>//JSON数据</span>
+<span class='span_code_line'></span>    ...
+<span class='span_code_line'></span>}
+<span class='span_code_line'></span><span class='code_note'>//注 真实结果并未对JSON格式化</span></pre>
+</div>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_j'>udp</h2></div>
+<hr/>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>$ GeoLite2Helper server udp 12345 0 db.loc db.asn
+<span class='span_code_line'></span>-----------------------------------------------------
+<span class='span_code_line'></span>$ nc -u localhost 12345
+<span class='span_code_line'></span>8.8.8.8
+<span class='span_code_line'></span>-----------------------------------------------------
+<span class='span_code_line'></span>{
+<span class='span_code_line'></span>    ...
+<span class='span_code_line'></span>    <span class='code_note'>//JSON数据</span>
+<span class='span_code_line'></span>    ...
+<span class='span_code_line'></span>}
+<span class='span_code_line'></span><span class='code_note'>//注 真实结果并未对JSON格式化</span></pre>
+</div>
+<h1 class='h_title anchor_point' name='a_k'>The End</h1>
+<p>Powered by DebugST -&gt; <a target='_bank' href='http://github.com/DebugST'>http://github.com/DebugST</a></p>
+
+</div>
+</div>
+</body>
+</html>

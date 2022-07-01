@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<title>GeoLite2 helper</title>
+<link rel="stylesheet" type="text/css" href="./css/stdoc.css"/>
+<script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="./js/stdoc.js"></script>
+</head>
+<body>
+<div id="div_body">
+<div id="div_left">
+<div id="div_left_list">
+<ul class='ul_group_root'>
+<li>
+    <a class='a_node_root anchor_btn' name='a_a' href='#a_a'>GeoLite2 Database</a>
+    <ul>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_b' href='#a_b'>Introduction</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_c' href='#a_c'>Download</a></li>
+    </ul>
+</li>
+<li>
+    <a class='a_node_root anchor_btn' name='a_d' href='#a_d'>How to use tool</a>
+    <ul>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_e' href='#a_e'>Introduction</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_f' href='#a_f'>create</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_g' href='#a_g'>search</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_h' href='#a_h'>server</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_i' href='#a_i'>http</a></li>
+        <li class='li_node_sub'><a class='anchor_btn' name='a_j' href='#a_j'>udp</a></li>
+    </ul>
+</li>
+<li>
+    <a class='a_node_root anchor_btn' name='a_k' href='#a_k'>The End</a>
+    <ul>
+        
+    </ul>
+</li>
+</ul><span class='span_time'>2022-05-13</span>
+</div>
+</div>
+<div id="div_right">
+<h1 class='h_title anchor_point' name='a_a'>GeoLite2 Database</h1>
+<div><h2 class='h_option anchor_point' name='a_b'>Introduction</h2></div>
+<hr/>
+<p>Sign Up: <a target='_bank' href='https://www.maxmind.com/en/geolite2/signup'>https://www.maxmind.com/en/geolite2/signup</a></p>
+<p>Web Page: <a target='_bank' href='https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en'>https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en</a></p>
+<p><span class='span_mark'>GeoLite2</span> database is a free IP geolocation database comparable to MaxMinds <a target='_bank' href='https://www.maxmind.com/en/geoip2-databases'>GeoIP2</a> database but less accurate than MaxMinds <a target='_bank' href='https://www.maxmind.com/en/geoip2-databases'>GeoIP2</a> database.</p>
+<p><span class='span_mark'>Country</span> <span class='span_mark'>City</span> and <span class='span_mark'>ASN</span> data of <span class='span_mark'>GeoLite2</span> will be updated on the website every <span class='span_mark'>Tuesday</span>.</p>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_c'>Download</h2></div>
+<hr/>
+<p>Download: <a target='_bank' href='https://www.maxmind.com/en/accounts/716735/geoip/downloads'>https://www.maxmind.com/en/accounts/716735/geoip/downloads</a></p>
+<img width=727 src='images/download.png'/>
+<p><span class='span_mark'>GeoLite2</span> provides a variety of data formats, this tool only parses <span class='span_mark'>CSV</span> format</p>
+<p>Usually download <span class='span_mark'>City</span> and <span class='span_mark'>ASN</span> data</p>
+<p><span class='span_mark'>City</span> is the IP positioning data accurate to the city</p>
+<p><span class='span_mark'>ASN</span> is the autonomous system information (the organization to which the IP belongs)</p>
+<img width=567 src='images/files.png'/>
+<p>Take the <span class='span_mark'>CSV</span> data of <span class='span_mark'>City</span> as an example, decompress the downloaded compressed package, you can see many files <span class='span_mark'>language file</span> <span class='span_mark'>IPV4 blocks</span> <span class='span_mark'>IPV6 blocks</span> <span class='span_mark'>LICENSE</span> etc.</p>
+<p>This tool parses <span class='span_mark'>GeoLite2 City: CSV Format</span> and <span class='span_mark'>GeoLite2 ASN: CSV Format</span></p>
+<h1 class='h_title anchor_point' name='a_d'>How to use tool</h1>
+<div><h2 class='h_option anchor_point' name='a_e'>Introduction</h2></div>
+<hr/>
+<p>The tool is a console program and can be run through the console. There are two versions <span class='span_mark'>DotNet core 5.0</span> <span class='span_mark'>DotNet Framework 4.0</span></p>
+<p><span class='span_mark'>DotNet core 5.0</span> is a cross-platform version but requires <span class='span_mark'>DotNet5</span> environment. Please refer to Microsoft"s official website for installation instructions: <a target='_bank' href='https://dotnet.microsoft.com/'>https://dotnet.microsoft.com/</a></p>
+<p><span class='span_mark'>DotNet Framework 4.0</span> requires <span class='span_mark'>.Net Framework 4.0</span> environment for <span class='span_mark'>Windows</span> version Usually <span class='span_mark'>Win10</span> system already comes with it.</p>
+<p>Run it with <span class='span_mark'>DotNet core</span></p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>dotnet GeoLite2Helper.dll</pre>
+</div>
+<p>Run it with <span class='span_mark'>Windows</span></p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper.exe</pre>
+</div>
+<p>Output</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper (search|create|server) ...
+<span class='span_code_line'></span>------------------------------------------------------------------------
+<span class='span_code_line'></span>search : search info from ip
+<span class='span_code_line'></span>         search [IP] [DBFile]+
+<span class='span_code_line'></span>    e.g: search 8.8.8.8 db.loc
+<span class='span_code_line'></span>    e.g: search 8.8.8.8 db.asn
+<span class='span_code_line'></span>    e.g: search 8.8.8.8 db.loc db.asn
+<span class='span_code_line'></span>    e.g: search 8.8.8.8 db.asn db.loc
+<span class='span_code_line'></span>create : create database file
+<span class='span_code_line'></span>         create (loc|asn) ...
+<span class='span_code_line'></span>    e.g: create asn GeoLite2-ASN-Blocks-IPv4.csv db.asn
+<span class='span_code_line'></span>    e.g: create loc City-Locations-zh-CN.csv City-Blocks-IPv4.csv db.loc
+<span class='span_code_line'></span>server : run <span class='code_key'>as</span> server
+<span class='span_code_line'></span>         server (http|udp) [port] [local] [DBFile]+
+<span class='span_code_line'></span>         http : run <span class='code_key'>as</span> http server
+<span class='span_code_line'></span>                http:<span class='code_note'>//localip:port?ip=8.8.8.8</span>
+<span class='span_code_line'></span>         udp  : run <span class='code_key'>as</span> udp server
+<span class='span_code_line'></span>                recv:[ip]    back:[result_json]
+<span class='span_code_line'></span>         local: (1/0) <span class='code_key'>if</span> local just bind 127.0.0.1, otherwrise 0.0.0.0
+<span class='span_code_line'></span>    e.g: server http 8080 1 db.loc
+<span class='span_code_line'></span>    e.g: server udp 12345 0 db.loc
+<span class='span_code_line'></span>    e.g: server udp 12345 0 db.asn
+<span class='span_code_line'></span>    e.g: server http 8080 1 db.loc db.asn
+<span class='span_code_line'></span>    e.g: server http 8080 1 db.asn db.loc
+<span class='span_code_line'></span>------------------------------------------------------------------------
+<span class='span_code_line'></span>Powered by DebugST -&gt; http:<span class='code_note'>//github.com/DebugST</span></pre>
+</div>
+<p>The tool provides 3 modes: <span class='span_mark'>search</span> <span class='span_mark'>create</span> <span class='span_mark'>server</span></p>
+<div><p class='p_hightlight'><span class='span_mark'>*.loc</span> and <span class='span_mark'>*.asn</span> are the tool custom database files <span class='span_mark'>*.loc</span> is the IP location data <span class='span_mark'>*.asn</span> is the IP autonomous system data, which are created by the tool through the <span class='span_mark'>CSV</span> file.</p></div>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_f'>create</h2></div>
+<hr/>
+<p><span class='span_mark'>create</span> provides a database file customized according to the <span class='span_mark'>CSV</span> file generation tool <span class='span_mark'>CSV</span> file is the file mentioned in the above introduction</p>
+<p>Format</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper create (loc|asn) ...</pre>
+</div>
+<p><span class='span_mark'>loc</span> means that to create an IP location database, the <span class='span_mark'>Language File</span> and <span class='span_mark'>IPV4</span> files in the <span class='span_mark'>City</span> download package are required.</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper create loc [loc_file] [ipv4_file] [out_file]
+<span class='span_code_line'></span>eg:
+<span class='span_code_line'></span>GeoLite2Helper create loc GeoLite2-City-Locations-zh-CN.csv GeoLite2-City-Blocks-IPv4.csv db.loc</pre>
+</div>
+<p>After running, the <span class='span_mark'>db.loc</span> file will be generated.</p>
+<p><span class='span_mark'>asn</span> means that the <span class='span_mark'>IPV4</span> file in the <span class='span_mark'>ASN</span> download package is required to create the autonomous system database.</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper create asn [ipv4_file] [out_file]
+<span class='span_code_line'></span>eg:
+<span class='span_code_line'></span>GeoLite2Helper create asn GeoLite2-ASN-Blocks-IPv4.csv db.asn</pre>
+</div>
+<p>After running, the <span class='span_mark'>db.asn</span> file will be generated.</p>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_g'>search</h2></div>
+<hr/>
+<p><span class='span_mark'>search</span> is a single search command</p>
+<p>Format</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper search [IP] [DBFile]+
+<span class='span_code_line'></span>eg:
+<span class='span_code_line'></span>GeoLite2Helper search 223.5.5.5 db.loc
+<span class='span_code_line'></span>GeoLite2Helper search 223.5.5.5 db.asn
+<span class='span_code_line'></span>GeoLite2Helper search 223.5.5.5 db.loc db.asn
+<span class='span_code_line'></span>GeoLite2Helper search 223.5.5.5 db.asn db.loc</pre>
+</div>
+<div><p class='p_hightlight'>You can choose to use one or both of the database files at the same time.</p></div>
+<p>Example:</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>$ GeoLite2Helper search 223.5.5.5 db.asn db.loc
+<span class='span_code_line'></span>----------------------------------------------------------
+<span class='span_code_line'></span>{
+<span class='span_code_line'></span>    <span class='code_string'>"asn"</span>: {
+<span class='span_code_line'></span>        <span class='code_string'>"number"</span>: 37963,
+<span class='span_code_line'></span>        <span class='code_string'>"name"</span>: <span class='code_string'>"Hangzhou Alibaba Advertising Co.,Ltd."</span>
+<span class='span_code_line'></span>    },
+<span class='span_code_line'></span>    <span class='code_string'>"location"</span>: {
+<span class='span_code_line'></span>        <span class='code_string'>"geoname"</span>: {
+<span class='span_code_line'></span>            <span class='code_string'>"locale_code"</span>: <span class='code_string'>"zh-CN"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"continent_code"</span>: <span class='code_string'>"AS"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"continent_name"</span>: <span class='code_string'>"亚洲"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"country_iso_code"</span>: <span class='code_string'>"CN"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"country_name"</span>: <span class='code_string'>"中国"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_1_iso_code"</span>: <span class='code_string'>"ZJ"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_1_name"</span>: <span class='code_string'>"浙江省"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_2_iso_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_2_name"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"city_name"</span>: <span class='code_string'>"杭州"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"metro_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"time_zone"</span>: <span class='code_string'>"Asia/Shanghai"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"is_in_european_union"</span>: <span class='code_string'>"0"</span>
+<span class='span_code_line'></span>        },
+<span class='span_code_line'></span>        <span class='code_string'>"registered_country_geoname"</span>: {
+<span class='span_code_line'></span>            <span class='code_string'>"locale_code"</span>: <span class='code_string'>"zh-CN"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"continent_code"</span>: <span class='code_string'>"AS"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"continent_name"</span>: <span class='code_string'>"亚洲"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"country_iso_code"</span>: <span class='code_string'>"CN"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"country_name"</span>: <span class='code_string'>"中国"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_1_iso_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_1_name"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_2_iso_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"subdivision_2_name"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"city_name"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"metro_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"time_zone"</span>: <span class='code_string'>"Asia/Shanghai"</span>,
+<span class='span_code_line'></span>            <span class='code_string'>"is_in_european_union"</span>: <span class='code_string'>"0"</span>
+<span class='span_code_line'></span>        },
+<span class='span_code_line'></span>        <span class='code_string'>"represented_country_geoname"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"is_anonymous_proxy"</span>: <span class='code_string'>"0"</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"is_satellite_provider"</span>: <span class='code_string'>"0"</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"postal_code"</span>: <span class='code_string'>""</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"latitude"</span>: <span class='code_string'>"30.2994"</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"longitude"</span>: <span class='code_string'>"120.1612"</span>,
+<span class='span_code_line'></span>        <span class='code_string'>"accuracy_radius"</span>: <span class='code_string'>"1000"</span>
+<span class='span_code_line'></span>    }
+<span class='span_code_line'></span>}
+<span class='span_code_line'></span><span class='code_note'>//Note: The actual result is not formatted in JSON.</span></pre>
+</div>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_h'>server</h2></div>
+<hr/>
+<p><span class='span_mark'>server</span> is allowed in service mode Supports two service modes <span class='span_mark'>http</span> <span class='span_mark'>udp</span>.</p>
+<p><span class='span_mark'>http</span> sends data in <span class='span_mark'>GET</span> mode. The parameter is <span class='span_mark'>ip</span>.</p>
+<p><span class='span_mark'>udp</span> listens on port in <span class='span_mark'>UDP</span> mode Accepts <span class='span_mark'>IP</span> plain text Returns <span class='span_mark'>JSON</span> data of this <span class='span_mark'>IP</span> query result.</p>
+<p>Format</p>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>GeoLite2Helper server (http|udp) [port] [local] [DBFile]+
+<span class='span_code_line'></span>port           -&gt; port <span class='code_key'>for</span> listen
+<span class='span_code_line'></span>local          -&gt; Whether to listen to loopback addresses only (1 or 0)
+<span class='span_code_line'></span>DBFile         -&gt; Database file. such <span class='code_key'>as</span> -&gt; db.loc
+<span class='span_code_line'></span>eg:
+<span class='span_code_line'></span><span class='code_note'>//Starting the service in http mode takes effect on the local area network.</span>
+<span class='span_code_line'></span>GeoLite2Helper server http 8080 0 db.loc
+<span class='span_code_line'></span><span class='code_note'>//Starting the service in udp mode only takes effect locally.</span>
+<span class='span_code_line'></span>GeoLite2Helper server udp 12345 1 db.asn
+<span class='span_code_line'></span><span class='code_note'>//Starting the service in http mode takes effect on the local area network.</span>
+<span class='span_code_line'></span>GeoLite2Helper server http 8080 0 db.loc db.asn
+<span class='span_code_line'></span><span class='code_note'>//Starting the service in http mode takes effect on the local area network.</span>
+<span class='span_code_line'></span>GeoLite2Helper server http 8080 0 db.asn db.loc</pre>
+</div>
+<div><p class='p_hightlight'>In <span class='span_mark'>http</span> model, For local area need <span class='span_mark'>Administrator</span>.</p></div>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_i'>http</h2></div>
+<hr/>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>$ GeoLite2Helper server http 8080 1 db.asn db.loc
+<span class='span_code_line'></span>-----------------------------------------------------
+<span class='span_code_line'></span>$ curl http:<span class='code_note'>//localhost:8080/?ip=8.8.8.8</span>
+<span class='span_code_line'></span>-----------------------------------------------------
+<span class='span_code_line'></span>{
+<span class='span_code_line'></span>    ...
+<span class='span_code_line'></span>    <span class='code_note'>//JSON data</span>
+<span class='span_code_line'></span>    ...
+<span class='span_code_line'></span>}
+<span class='span_code_line'></span><span class='code_note'>//Note: The actual result is not formatted in JSON.</span></pre>
+</div>
+<hr/>
+<div><h2 class='h_option anchor_point' name='a_j'>udp</h2></div>
+<hr/>
+<div class='div_code'>
+<pre class='pre_code'><span class='span_code_line'></span>$ GeoLite2Helper server udp 12345 0 db.loc db.asn
+<span class='span_code_line'></span>-----------------------------------------------------
+<span class='span_code_line'></span>$ nc -u localhost 12345
+<span class='span_code_line'></span>8.8.8.8
+<span class='span_code_line'></span>-----------------------------------------------------
+<span class='span_code_line'></span>{
+<span class='span_code_line'></span>    ...
+<span class='span_code_line'></span>    <span class='code_note'>//JSON data</span>
+<span class='span_code_line'></span>    ...
+<span class='span_code_line'></span>}
+<span class='span_code_line'></span><span class='code_note'>//Note: The actual result is not formatted in JSON.</span></pre>
+</div>
+<h1 class='h_title anchor_point' name='a_k'>The End</h1>
+<p>Powered by DebugST -&gt; <a target='_bank' href='http://github.com/DebugST'>http://github.com/DebugST</a></p>
+
+</div>
+</div>
+</body>
+</html>
